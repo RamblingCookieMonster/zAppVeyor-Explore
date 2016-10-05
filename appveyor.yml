@@ -11,16 +11,15 @@ environment:
   some_password:
     secure: bJPGwaBN0Km+Ef91ANn5kQ==
 
-# version format
-version: 1.0.{build}
+# See http://help.appveyor.com/discussions/questions/2433-list-of-os-images
+image: Visual Studio 2015
 
 # Skip on updates to the readme.
 # We can force this by adding [skip ci] or [ci skip] anywhere in commit message
 skip_commits:
   message: /updated readme.*|update readme.*s/
 
-# See http://help.appveyor.com/discussions/questions/2433-list-of-os-images
-image: Visual Studio 2015
+build: false
 
 # You can run other stages, but I tend to bundle
 # everything into a portable script...
