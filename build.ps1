@@ -10,24 +10,31 @@ Set-BuildEnvironment
 $lines = '----------------------------------------------------------------------'
 
 "$lines`nPSVERSIONTABLE`n`n"
-$PSVersionTable
+$PSVersionTable |
+    Out-Host
 
 "`n`n$lines`nBUILDHELPERS`n`n"
-Get-Item ENV:BH*
+Get-Item ENV:BH* |
+    Out-Host
 
 "`n`n$lines`nMODULES`n`n"
-Get-Modules -ListAvailable |
+Get-Module -ListAvailable |
     Select Name, Version, Path |
-    Sort Name
+    Sort Name |
+    Out-Host
 
 "`n`n$lines`nENV`n`n"
-Get-ChildItem ENV:
+Get-ChildItem ENV: |
+    Out-Host
 
 "`n`n$lines`nPSMODULEPATH`n`n"
-$ENV:PSModulePath -Split ";"
+$ENV:PSModulePath -Split ";" |
+    Out-Host
 
 "`n`n$lines`nPATH`n`n"
-$ENV:PATH -Split ";"
+$ENV:PATH -Split ";" |
+    Out-Host
 
 "`n`n$lines`nVARIABLES`n`n"
-Get-Variable
+Get-Variable |
+    Out-Host
